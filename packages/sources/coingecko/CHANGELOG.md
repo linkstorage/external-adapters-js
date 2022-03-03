@@ -1,5 +1,54 @@
 # @chainlink/coingecko-adapter
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [4dd7722b0]
+  - @chainlink/ea-test-helpers@1.2.0
+
+## 1.3.0
+
+### Minor Changes
+
+- 9190472b5: add token override for CRO token
+
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.2.0
+
+### Minor Changes
+
+- 4b85d4789: add missing steth override
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.1.16
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.1.15
+
+### Patch Changes
+
+- Add Coingecko STETH and LUNA symbol to id overrides
+
 ## 1.1.14
 
 ### Patch Changes

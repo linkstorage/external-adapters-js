@@ -1,5 +1,49 @@
 # @chainlink/por-indexer-adapter
 
+## 1.0.16
+
+### Patch Changes
+
+- Updated dependencies [4dd7722b0]
+  - @chainlink/ea-test-helpers@1.2.0
+  - @chainlink/proof-of-reserves-adapter@1.4.15
+
+## 1.0.15
+
+### Patch Changes
+
+- Updated dependencies [1e05790a6]
+  - @chainlink/proof-of-reserves-adapter@1.4.14
+
+## 1.0.14
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/proof-of-reserves-adapter@1.4.13
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.0.13
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/proof-of-reserves-adapter@1.4.12
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.0.12
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/proof-of-reserves-adapter@1.4.11
+  - @chainlink/ea-test-helpers@1.1.0
+
 ## 1.0.11
 
 ### Patch Changes

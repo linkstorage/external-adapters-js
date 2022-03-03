@@ -1,6 +1,6 @@
 {
   "name": "@chainlink/external-adapters-js",
-  "version": "1.12.0",
+  "version": "1.14.0",
   "license": "MIT",
   "private": true,
   "workspaces": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "bundle": "ncc build",
-    "clean": "tsc -b --clean  ./packages/tsconfig.json",
+    "clean": "rm -rf **/dist; tsc -b --clean ./packages/tsconfig.json",
     "cm": "cz",
     "docker:build": "docker-compose -f docker-compose.generated.yaml build",
     "docker:start": "docker-compose -f docker-compose.generated.yaml run -p 8080:8080",
@@ -27,18 +27,18 @@
     "qa:adapter": "ts-node-transpile-only ./packages/scripts/src/ephemeral-adapters",
     "qa:flux:configure": "ts-node-transpile-only ./packages/scripts/src/flux-emulator",
     "setup": "tsc -b ./packages/tsconfig.json ",
-    "test:ci:integration": "EA_PORT=0 jest --coverage integration",
-    "test:ci:unit": "jest --coverage unit",
-    "test:integration": "EA_PORT=0 jest integration",
-    "test:unit": "jest unit",
-    "test": "jest",
+    "test:ci:integration": "EA_PORT=0 NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" jest --coverage integration",
+    "test:ci:unit": "NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" jest --coverage unit",
+    "test:integration": "EA_PORT=0 NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" jest integration",
+    "test:unit": "NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" jest unit",
+    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" jest",
     "validate-codecov": "curl --data-binary @codecov.yml https://codecov.io/validate",
     "versions": "ts-node-transpile-only ./packages/scripts/src/versions"
   },
   "dependencies": {
-    "@babel/core": "7.16.0",
-    "@babel/preset-env": "7.16.4",
-    "@babel/preset-typescript": "7.16.0",
+    "@babel/core": "7.16.12",
+    "@babel/preset-env": "7.16.11",
+    "@babel/preset-typescript": "7.16.7",
     "@changesets/cli": "2.18.1",
     "@types/jest": "27.0.3",
     "@typescript-eslint/eslint-plugin": "4.33.0",
@@ -55,7 +55,8 @@
     "@types/node": "16.11.19",
     "husky": "7.0.4",
     "lint-staged": "11.2.6",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
+    "source-map-support": "0.5.21",
     "ts-node": "10.4.0",
     "typescript": "4.3.5"
   },
@@ -69,5 +70,6 @@
   },
   "lint-staged": {
     "*.{js,css,md,ts,json,yml,yaml}": "prettier --write"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }

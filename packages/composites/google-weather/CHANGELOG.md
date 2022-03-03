@@ -1,5 +1,37 @@
 # @chainlink/google-weather-adapter
 
+## 1.0.33
+
+### Patch Changes
+
+- @chainlink/google-bigquery-adapter@1.1.17
+
+## 1.0.32
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/google-bigquery-adapter@1.1.16
+
+## 1.0.31
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/google-bigquery-adapter@1.1.15
+
+## 1.0.30
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/google-bigquery-adapter@1.1.14
+
 ## 1.0.29
 
 ### Patch Changes

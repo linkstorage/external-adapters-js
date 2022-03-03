@@ -1,5 +1,71 @@
 # @chainlink/xsushi-price-adapter
 
+## 1.0.7
+
+### Patch Changes
+
+- @chainlink/token-allocation-adapter@1.2.1
+
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies [1e05790a6]
+- Updated dependencies [9190472b5]
+  - @chainlink/token-allocation-adapter@1.2.0
+
+## 1.0.5
+
+### Patch Changes
+
+- @chainlink/token-allocation-adapter@1.1.6
+
+## 1.0.4
+
+### Patch Changes
+
+- @chainlink/token-allocation-adapter@1.1.5
+
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/token-allocation-adapter@1.1.4
+
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/token-allocation-adapter@1.1.3
+
+## 1.0.41
+
+### Patch Changes
+
+9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [07c013666]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+
+## 1.0.40
+
+### Patch Changes
+
+- @chainlink/token-allocation-adapter@1.1.1
+
+## 1.0.39
+
+### Patch Changes
+
+- Updated dependencies [b858d0b9f]
+  - @chainlink/token-allocation-adapter@1.1.0
+
 ## 1.0.38
 
 ### Patch Changes

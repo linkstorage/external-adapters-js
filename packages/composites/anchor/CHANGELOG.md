@@ -1,5 +1,91 @@
 # @chainlink/anchor-adapter
 
+## 1.3.6
+
+### Patch Changes
+
+- Updated dependencies [b3f3423e4]
+  - @chainlink/terra-view-function-adapter@1.2.0
+
+## 1.3.5
+
+### Patch Changes
+
+- Updated dependencies [4dd7722b0]
+  - @chainlink/ea-test-helpers@1.2.0
+  - @chainlink/token-allocation-adapter@1.2.1
+  - @chainlink/terra-view-function-adapter@1.1.17
+
+## 1.3.4
+
+### Patch Changes
+
+- Updated dependencies [1e05790a6]
+- Updated dependencies [9190472b5]
+  - @chainlink/token-allocation-adapter@1.2.0
+
+## 1.3.3
+
+### Patch Changes
+
+- @chainlink/token-allocation-adapter@1.1.6
+
+## 1.3.2
+
+### Patch Changes
+
+- @chainlink/token-allocation-adapter@1.1.5
+
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/token-allocation-adapter@1.1.4
+  - @chainlink/ea-test-helpers@1.1.0
+  - @chainlink/terra-view-function-adapter@1.1.16
+
+## 1.3.0
+
+### Minor Changes
+
+- af5e5d832: update anchor EA to derive the USD/bETH price using the new method. This new method relies on pulling the stETH/ETH price from the pool's Curve contract. Because of this, a new optional environment variable named 'STETH_POOL_CONTRACT_ADDRESS' has been added with a default of '0xdc24316b9ae028f1497c275eb9192a3ea0f67022'
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/token-allocation-adapter@1.1.3
+  - @chainlink/ea-test-helpers@1.1.0
+  - @chainlink/terra-view-function-adapter@1.1.15
+
+## 1.2.4
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [07c013666]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/token-allocation-adapter@1.1.0
+  - @chainlink/terra-view-function-adapter@1.1.14
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.2.3
+
+### Patch Changes
+
+- @chainlink/token-allocation-adapter@1.1.1
+
+## 1.2.2
+
+### Patch Changes
+
+- Updated dependencies [b858d0b9f]
+  - @chainlink/token-allocation-adapter@1.1.0
+
 ## 1.2.1
 
 ### Patch Changes

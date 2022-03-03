@@ -1,5 +1,49 @@
 # @chainlink/wbtc-address-set-adapter
 
+## 1.3.15
+
+### Patch Changes
+
+- Updated dependencies [4dd7722b0]
+  - @chainlink/ea-test-helpers@1.2.0
+  - @chainlink/proof-of-reserves-adapter@1.4.15
+
+## 1.3.14
+
+### Patch Changes
+
+- Updated dependencies [1e05790a6]
+  - @chainlink/proof-of-reserves-adapter@1.4.14
+
+## 1.3.13
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/proof-of-reserves-adapter@1.4.13
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.3.12
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/proof-of-reserves-adapter@1.4.12
+  - @chainlink/ea-test-helpers@1.1.0
+
+## 1.3.11
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/proof-of-reserves-adapter@1.4.11
+  - @chainlink/ea-test-helpers@1.1.0
+
 ## 1.3.10
 
 ### Patch Changes

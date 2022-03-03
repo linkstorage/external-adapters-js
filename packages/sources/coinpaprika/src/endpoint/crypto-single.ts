@@ -2,22 +2,21 @@ import { Requester, Validator } from '@chainlink/ea-bootstrap'
 import { ExecuteWithConfig, Config, AdapterRequest, InputParameters } from '@chainlink/types'
 import { NAME as AdapterName } from '../config'
 import { getCoinIds, getSymbolToId } from '../util'
+import overrides from '../config/symbols.json'
 
-export const supportedEndpoints = []
+export const supportedEndpoints = ['crypto-single']
 
 const buildPath =
   (path: string) =>
   (request: AdapterRequest): string => {
-    const validator = new Validator(request, inputParameters)
+    const validator = new Validator(request, inputParameters, {}, { overrides })
 
     const quote = validator.validated.data.quote
     return `quotes.${quote.toUpperCase()}.${path}`
   }
 
 export const endpointResultPaths = {
-  crypto: buildPath('price'),
-  price: buildPath('price'),
-  marketcap: buildPath('market_cap'),
+  'crypto-single': buildPath('price'),
 }
 
 export const inputParameters: InputParameters = {
@@ -75,7 +74,7 @@ export interface ResponseSchema {
 }
 
 export const execute: ExecuteWithConfig<Config> = async (request, context, config) => {
-  const validator = new Validator(request, inputParameters)
+  const validator = new Validator(request, inputParameters, {}, { overrides })
 
   const jobRunID = validator.validated.id
   const symbol = validator.overrideSymbol(AdapterName) as string

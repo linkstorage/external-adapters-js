@@ -9,9 +9,7 @@ import {
 import { merge } from 'lodash'
 import { isArray, isObject } from '../util'
 import { AdapterError } from './error'
-import presetSymbols from '../config/overrides/presetSymbols.json'
 import presetTokens from '../config/overrides/presetTokens.json'
-import presetIncludes from '../config/overrides/presetIncludes.json'
 import { Requester } from './requester'
 import { baseInputParameters } from './selector'
 
@@ -23,6 +21,8 @@ type InputType = {
 }
 export interface ValidatorOptions {
   shouldThrowError?: boolean
+  includes?: any[]
+  overrides?: any
 }
 export class Validator {
   input: InputType
@@ -43,10 +43,15 @@ export class Validator {
     if (!this.input.data) this.input.data = {}
     this.inputConfigs = { ...baseInputParameters, ...inputConfigs }
     this.inputOptions = { ...inputOptions }
-    this.validatorOptions = { shouldThrowError: true, ...validatorOptions }
+    this.validatorOptions = {
+      shouldThrowError: true,
+      includes: [],
+      overrides: {},
+      ...validatorOptions,
+    }
     this.validated = { id: this.input.id, data: {} }
     this.validateInput()
-    this.validateOverrides('overrides', presetSymbols)
+    this.validateOverrides('overrides', this.validatorOptions.overrides)
     this.validateOverrides('tokenOverrides', presetTokens)
     this.validateIncludeOverrides()
   }
@@ -67,7 +72,7 @@ export class Validator {
             ? this.validateRequiredParam(this.input.data[key], key, options)
             : this.validateOptionalParam(this.input.data[key], key, options)
         } else {
-          this.validateObjectParam(key)
+          this.validateObjectParam(key, this.validatorOptions.shouldThrowError)
         }
       }
     } catch (e) {
@@ -91,7 +96,7 @@ export class Validator {
     try {
       this.validated.includes = this.formatIncludeOverrides([
         ...(Array.isArray(this.input.data?.includes) ? this.input.data.includes : []),
-        ...presetIncludes,
+        ...(this.validatorOptions.includes || []),
       ])
     } catch (e) {
       this.parseError(e)
@@ -139,7 +144,7 @@ export class Validator {
     return this.validated.tokenOverrides?.get(network.toLowerCase())?.get(symbol.toLowerCase())
   }
 
-  overrideIncludes = (adapter: string, from: string, to: string): IncludePair | undefined => {
+  overrideIncludes = (from: string, to: string): IncludePair | undefined => {
     // Search through `presetIncludes` to find matching override for adapter and to/from pairing.
     const pairs = (
       this.validated.includes?.filter(
@@ -150,18 +155,10 @@ export class Validator {
         pair.from.toLowerCase() === from.toLowerCase() &&
         pair.to.toLowerCase() === to.toLowerCase(),
     )
-    for (const pair of pairs) {
-      const matchingIncludes = pair.includes.find(
-        (include) =>
-          !include.adapters ||
-          include.adapters.length === 0 ||
-          include.adapters.includes(adapter.toUpperCase()),
-      )
-      if (matchingIncludes) {
-        return matchingIncludes
-      }
+    if (!pairs || !pairs[0] || !pairs[0].includes || !pairs[0].includes[0]) {
+      return
     }
-    return
+    return pairs[0].includes[0]
   }
 
   overrideReverseLookup = (adapter: string, type: OverrideType, symbol: string): string => {
@@ -210,7 +207,7 @@ export class Validator {
     throw new AdapterError({ jobRunID: this.validated.id, statusCode: 400, message })
   }
 
-  validateObjectParam(key: string): void {
+  validateObjectParam(key: string, shouldThrowError = true): void {
     const inputConfig = this.inputConfigs[key] as InputParameter
 
     const usedKey = this.getUsedKey(key, inputConfig.aliases ?? [])
@@ -219,52 +216,65 @@ export class Validator {
       ? this.input.data[usedKey as string] ?? inputConfig.default
       : inputConfig.default
 
-    const paramIsDefined = !(param === undefined || param === null || param === '')
+    if (shouldThrowError) {
+      const paramIsDefined = !(param === undefined || param === null || param === '')
 
-    if (inputConfig.required && !paramIsDefined)
-      this.throwInvalid(`Required parameter ${key} must be non-null and non-empty`)
+      if (inputConfig.required && !paramIsDefined)
+        this.throwInvalid(`Required parameter ${key} must be non-null and non-empty`)
 
-    if (paramIsDefined) {
-      if (inputConfig.type) {
-        const primitiveTypes = ['boolean', 'number', 'bigint', 'string']
+      if (paramIsDefined) {
+        if (inputConfig.type) {
+          const primitiveTypes = ['boolean', 'number', 'bigint', 'string']
 
-        if (![...primitiveTypes, 'array', 'object'].includes(inputConfig.type))
-          this.throwInvalid(`${key} parameter has unrecognized type ${inputConfig.type}`)
+          if (![...primitiveTypes, 'array', 'object'].includes(inputConfig.type))
+            this.throwInvalid(`${key} parameter has unrecognized type ${inputConfig.type}`)
 
-        if (primitiveTypes.includes(inputConfig.type) && typeof param !== inputConfig.type)
-          this.throwInvalid(`${key} parameter must be of type ${inputConfig.type}`)
+          if (primitiveTypes.includes(inputConfig.type) && typeof param !== inputConfig.type)
+            this.throwInvalid(`${key} parameter must be of type ${inputConfig.type}`)
 
-        if (inputConfig.type === 'array' && (!Array.isArray(param) || param.length === 0))
-          this.throwInvalid(`${key} parameter must be a non-empty array`)
+          if (inputConfig.type === 'array' && (!Array.isArray(param) || param.length === 0))
+            this.throwInvalid(`${key} parameter must be a non-empty array`)
 
-        if (
-          inputConfig.type === 'object' &&
-          (!param ||
-            Array.isArray(param) ||
-            typeof param !== inputConfig.type ||
-            Object.keys(param).length === 0)
-        )
-          this.throwInvalid(`${key} parameter must be an object with at least one property`)
-      }
+          if (
+            inputConfig.type === 'object' &&
+            (!param ||
+              Array.isArray(param) ||
+              typeof param !== inputConfig.type ||
+              Object.keys(param).length === 0)
+          )
+            this.throwInvalid(`${key} parameter must be an object with at least one property`)
+        }
 
-      if (inputConfig.options && !inputConfig.options.includes(param))
-        this.throwInvalid(`${key} parameter is not in the set of available options`)
+        if (inputConfig.options) {
+          const tolcase = (o: any) => (typeof o === 'string' ? o.toLowerCase() : o)
 
-      for (const dependency of inputConfig.dependsOn ?? []) {
-        const usedDependencyKey = this.getUsedKey(
-          dependency,
-          (this.inputConfigs[dependency] as InputParameter).aliases ?? [],
-        )
-        if (!usedDependencyKey) this.throwInvalid(`${key} dependency ${dependency} not supplied`)
-      }
+          const formattedOptions = inputConfig.options.map(tolcase)
+          const formattedParam = tolcase(param)
 
-      for (const exclusive of inputConfig.exclusive ?? []) {
-        const usedExclusiveKey = this.getUsedKey(
-          exclusive,
-          (this.inputConfigs[exclusive] as InputParameter).aliases ?? [],
-        )
-        if (usedExclusiveKey)
-          this.throwInvalid(`${key} cannot be supplied concurrently with ${exclusive}`)
+          if (!formattedOptions.includes(formattedParam))
+            this.throwInvalid(
+              `${key} parameter '${formattedParam}' is not in the set of available options: ${formattedOptions.join(
+                ',',
+              )}`,
+            )
+        }
+
+        for (const dependency of inputConfig.dependsOn ?? []) {
+          const usedDependencyKey = this.getUsedKey(
+            dependency,
+            (this.inputConfigs[dependency] as InputParameter).aliases ?? [],
+          )
+          if (!usedDependencyKey) this.throwInvalid(`${key} dependency ${dependency} not supplied`)
+        }
+
+        for (const exclusive of inputConfig.exclusive ?? []) {
+          const usedExclusiveKey = this.getUsedKey(
+            exclusive,
+            (this.inputConfigs[exclusive] as InputParameter).aliases ?? [],
+          )
+          if (usedExclusiveKey)
+            this.throwInvalid(`${key} cannot be supplied concurrently with ${exclusive}`)
+        }
       }
     }
 

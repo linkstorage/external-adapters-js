@@ -1,5 +1,37 @@
 # @chainlink/dydx-rewards-adapter
 
+## 1.1.7
+
+### Patch Changes
+
+- @chainlink/ipfs-adapter@1.2.13
+
+## 1.1.6
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/ipfs-adapter@1.2.12
+
+## 1.1.5
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/ipfs-adapter@1.2.11
+
+## 1.1.4
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/ipfs-adapter@1.2.10
+
 ## 1.1.3
 
 ### Patch Changes

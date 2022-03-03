@@ -8,9 +8,10 @@ import {
 } from '@chainlink/types'
 import { NAME as AdapterName } from '../config'
 import { getCoin } from '../util'
+import overrides from '../config/symbols.json'
 
 export const supportedEndpoints = ['crypto', 'price', 'marketcap', 'volume']
-export const batchablePropertyPath = [{ name: 'base' }, { name: 'quote' }]
+export const batchablePropertyPath = [{ name: 'base' }]
 
 export interface ResponseSchema {
   id: string
@@ -117,7 +118,7 @@ const handleBatchedRequest = (
 }
 
 export const execute: ExecuteWithConfig<Config> = async (request, _, config) => {
-  const validator = new Validator(request, inputParameters)
+  const validator = new Validator(request, inputParameters, {}, { overrides })
 
   const jobRunID = validator.validated.id
   const symbol = validator.overrideSymbol(AdapterName)

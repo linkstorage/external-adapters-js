@@ -1,5 +1,37 @@
 # @chainlink/lotus-adapter
 
+## 2.1.17
+
+### Patch Changes
+
+- @chainlink/json-rpc-adapter@1.2.5
+
+## 2.1.16
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/json-rpc-adapter@1.2.4
+
+## 2.1.15
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/json-rpc-adapter@1.2.3
+
+## 2.1.14
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/json-rpc-adapter@1.2.2
+
 ## 2.1.13
 
 ### Patch Changes

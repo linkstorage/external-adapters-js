@@ -1,5 +1,120 @@
 # @chainlink/proof-of-reserves-adapter
 
+## 1.4.15
+
+### Patch Changes
+
+- Updated dependencies [4dd7722b0]
+  - @chainlink/ea-test-helpers@1.2.0
+  - @chainlink/bitcoin-json-rpc-adapter@1.0.33
+  - @chainlink/por-indexer-adapter@1.0.16
+  - @chainlink/ada-balance-adapter@2.3.10
+  - @chainlink/amberdata-adapter@1.3.13
+  - @chainlink/blockchain.com-adapter@1.1.17
+  - @chainlink/blockchair-adapter@1.1.17
+  - @chainlink/blockcypher-adapter@1.2.17
+  - @chainlink/btc.com-adapter@1.2.17
+  - @chainlink/chain-reserve-wallet-adapter@2.2.13
+  - @chainlink/cryptoapis-adapter@1.1.17
+  - @chainlink/eth-balance-adapter@1.1.17
+  - @chainlink/gemini-adapter@2.1.17
+  - @chainlink/lotus-adapter@2.1.17
+  - @chainlink/reduce-adapter@1.2.5
+  - @chainlink/renvm-address-set-adapter@1.3.6
+  - @chainlink/sochain-adapter@1.2.17
+  - @chainlink/wbtc-address-set-adapter@1.3.15
+  - @chainlink/wrapped-adapter@2.1.17
+
+## 1.4.14
+
+### Patch Changes
+
+- 1e05790a6: Change start scripts to use standardized export style
+  - @chainlink/por-indexer-adapter@1.0.15
+  - @chainlink/renvm-address-set-adapter@1.3.5
+  - @chainlink/wbtc-address-set-adapter@1.3.14
+
+## 1.4.13
+
+### Patch Changes
+
+- Updated dependencies [d0b872f6c]
+- Updated dependencies [0528871a7]
+  - @chainlink/ea-bootstrap@1.12.0
+  - @chainlink/renvm-address-set-adapter@1.3.4
+  - @chainlink/bitcoin-json-rpc-adapter@1.0.32
+  - @chainlink/por-indexer-adapter@1.0.14
+  - @chainlink/ea-test-helpers@1.1.0
+  - @chainlink/ada-balance-adapter@2.3.9
+  - @chainlink/amberdata-adapter@1.3.12
+  - @chainlink/blockchain.com-adapter@1.1.16
+  - @chainlink/blockchair-adapter@1.1.16
+  - @chainlink/blockcypher-adapter@1.2.16
+  - @chainlink/btc.com-adapter@1.2.16
+  - @chainlink/chain-reserve-wallet-adapter@2.2.12
+  - @chainlink/cryptoapis-adapter@1.1.16
+  - @chainlink/eth-balance-adapter@1.1.16
+  - @chainlink/gemini-adapter@2.1.16
+  - @chainlink/lotus-adapter@2.1.16
+  - @chainlink/reduce-adapter@1.2.4
+  - @chainlink/sochain-adapter@1.2.16
+  - @chainlink/wbtc-address-set-adapter@1.3.13
+  - @chainlink/wrapped-adapter@2.1.16
+
+## 1.4.12
+
+### Patch Changes
+
+- Updated dependencies [ab17812c7]
+  - @chainlink/ea-bootstrap@1.11.2
+  - @chainlink/bitcoin-json-rpc-adapter@1.0.31
+  - @chainlink/por-indexer-adapter@1.0.13
+  - @chainlink/ea-test-helpers@1.1.0
+  - @chainlink/ada-balance-adapter@2.3.8
+  - @chainlink/amberdata-adapter@1.3.11
+  - @chainlink/blockchain.com-adapter@1.1.15
+  - @chainlink/blockchair-adapter@1.1.15
+  - @chainlink/blockcypher-adapter@1.2.15
+  - @chainlink/btc.com-adapter@1.2.15
+  - @chainlink/chain-reserve-wallet-adapter@2.2.11
+  - @chainlink/cryptoapis-adapter@1.1.15
+  - @chainlink/eth-balance-adapter@1.1.15
+  - @chainlink/gemini-adapter@2.1.15
+  - @chainlink/lotus-adapter@2.1.15
+  - @chainlink/reduce-adapter@1.2.3
+  - @chainlink/renvm-address-set-adapter@1.3.3
+  - @chainlink/sochain-adapter@1.2.15
+  - @chainlink/wbtc-address-set-adapter@1.3.12
+  - @chainlink/wrapped-adapter@2.1.15
+
+## 1.4.11
+
+### Patch Changes
+
+- 9041e0252: refactorted config into folder, moved ea presets into adapter folders, changed validator to accept ea presets
+- Updated dependencies [341f2bd4d]
+- Updated dependencies [9041e0252]
+  - @chainlink/ea-bootstrap@1.11.1
+  - @chainlink/bitcoin-json-rpc-adapter@1.0.30
+  - @chainlink/por-indexer-adapter@1.0.12
+  - @chainlink/ada-balance-adapter@2.3.7
+  - @chainlink/amberdata-adapter@1.3.10
+  - @chainlink/blockchain.com-adapter@1.1.14
+  - @chainlink/blockchair-adapter@1.1.14
+  - @chainlink/blockcypher-adapter@1.2.14
+  - @chainlink/btc.com-adapter@1.2.14
+  - @chainlink/chain-reserve-wallet-adapter@2.2.10
+  - @chainlink/cryptoapis-adapter@1.1.14
+  - @chainlink/eth-balance-adapter@1.1.14
+  - @chainlink/gemini-adapter@2.1.14
+  - @chainlink/lotus-adapter@2.1.14
+  - @chainlink/reduce-adapter@1.2.2
+  - @chainlink/renvm-address-set-adapter@1.3.2
+  - @chainlink/sochain-adapter@1.2.14
+  - @chainlink/wbtc-address-set-adapter@1.3.11
+  - @chainlink/wrapped-adapter@2.1.14
+  - @chainlink/ea-test-helpers@1.1.0
+
 ## 1.4.10
 
 ### Patch Changes
