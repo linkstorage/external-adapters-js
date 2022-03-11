@@ -1984,8 +1984,8 @@ __metadata:
     "@types/jest": 27.0.3
     "@types/node": 16.11.19
     "@types/supertest": 2.0.11
-    nock: ^13.2.4
-    supertest: ^6.2.2
+    nock: 13.2.4
+    supertest: 6.2.2
     tslib: ^2.3.1
     typescript: 4.3.5
   languageName: unknown
@@ -3564,8 +3564,8 @@ __metadata:
     "@types/jest": 27.0.3
     "@types/node": 16.11.19
     "@types/supertest": 2.0.11
-    nock: ^13.2.4
-    supertest: ^6.2.2
+    nock: 13.2.4
+    supertest: 6.2.2
     tslib: ^2.3.1
     typescript: 4.3.5
   languageName: unknown
@@ -3981,8 +3981,8 @@ __metadata:
     "@types/supertest": 2.0.11
     decimal.js: ^10.3.1
     ethers: ^5.5.4
-    nock: ^13.2.4
-    supertest: ^6.2.2
+    nock: 13.2.4
+    supertest: 6.2.2
     tslib: ^2.3.1
     typescript: 4.3.5
   languageName: unknown
@@ -22145,7 +22145,7 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"nock@npm:13.2.4, nock@npm:^13.2.4":
+"nock@npm:13.2.4":
   version: 13.2.4
   resolution: "nock@npm:13.2.4"
   dependencies:
