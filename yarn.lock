@@ -3787,6 +3787,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chainlink/link-storage-adapter@workspace:packages/composites/link-storage":
+  version: 0.0.0-use.local
+  resolution: "@chainlink/link-storage-adapter@workspace:packages/composites/link-storage"
+  dependencies:
+    "@chainlink/ea-bootstrap": "workspace:*"
+    "@chainlink/types": "workspace:*"
+    "@types/jest": 27.0.3
+    "@types/node": 16.11.19
+    dotenv: ^16.0.0
+    ipfs-http-client: ^56.0.1
+    multiformats: ^9.6.4
+    tslib: ^2.3.1
+    typescript: 4.3.5
+  languageName: unknown
+  linkType: soft
+
 "@chainlink/linkpool-adapter@workspace:*, @chainlink/linkpool-adapter@workspace:packages/sources/linkpool":
   version: 0.0.0-use.local
   resolution: "@chainlink/linkpool-adapter@workspace:packages/sources/linkpool"
@@ -7282,6 +7298,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ipld/dag-cbor@npm:^6.0.3":
+  version: 6.0.15
+  resolution: "@ipld/dag-cbor@npm:6.0.15"
+  dependencies:
+    cborg: ^1.5.4
+    multiformats: ^9.5.4
+  checksum: c4ac8d7d271b9dd093c43495b1f24c3cdb7f10487aac529c2010c53a3320439ac9b17f53f02177e022735a1aae3d921f359c7020f765b72f94799ec3ff8e7207
+  languageName: node
+  linkType: hard
+
+"@ipld/dag-cbor@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "@ipld/dag-cbor@npm:7.0.1"
+  dependencies:
+    cborg: ^1.6.0
+    multiformats: ^9.5.4
+  checksum: 54690acf434160a5bb7e92f435dbccc9fdf244c183040e38342de8ccf57e461fbcbc53caad73d19d99d23da5758c72001d7309ca3c899092bcdef137125ac05a
+  languageName: node
+  linkType: hard
+
+"@ipld/dag-json@npm:^8.0.1":
+  version: 8.0.8
+  resolution: "@ipld/dag-json@npm:8.0.8"
+  dependencies:
+    cborg: ^1.5.4
+    multiformats: ^9.5.4
+  checksum: 7fccf3387083ac81db4d3895a3fdb0ce7e33f27f7f07eb6d50b01cb4434bd65bf5a729280b045323af6b48c534d00cfc5070a9b3d5d63272c234a5e8f0b6c6cd
+  languageName: node
+  linkType: hard
+
 "@ipld/dag-pb@npm:^2.0.0, @ipld/dag-pb@npm:^2.0.2, @ipld/dag-pb@npm:^2.1.0, @ipld/dag-pb@npm:^2.1.3":
   version: 2.1.9
   resolution: "@ipld/dag-pb@npm:2.1.9"
@@ -9979,6 +10025,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"any-signal@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "any-signal@npm:3.0.0"
+  checksum: b59f11271d17391c740a903c3f422b9bda77f3d011e106b9733e298685ab9489af9b6c1b300cb778048ddad3dfdc74168f738670bf5f3cf90e04650bb822ed60
+  languageName: node
+  linkType: hard
+
 "anymatch@npm:^2.0.0":
   version: 2.0.0
   resolution: "anymatch@npm:2.0.0"
@@ -11536,6 +11589,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cborg@npm:^1.5.4, cborg@npm:^1.6.0":
+  version: 1.8.1
+  resolution: "cborg@npm:1.8.1"
+  bin:
+    cborg: cli.js
+  checksum: 5932e77b6ed8e3d02690a5fac6644e9d27169356db4ea9b349df6983447e710e0f769344cf79ba02bf01b9c25dbeaeb763b9dd41ad0f4c638427ec27dc645a6a
+  languageName: node
+  linkType: hard
+
 "center-align@npm:^0.1.1":
   version: 0.1.3
   resolution: "center-align@npm:0.1.3"
@@ -12646,6 +12708,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dag-jose@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "dag-jose@npm:1.0.0"
+  dependencies:
+    "@ipld/dag-cbor": ^6.0.3
+    multiformats: ^9.0.2
+  checksum: 2d95e938f08c383718dd6f07d92063f164bb85be831f624f122687ca3f4d365a76320c3f6f16cfbe013c581198504728abd226567775ef35fb40176e1cb23112
+  languageName: node
+  linkType: hard
+
 "dashdash@npm:^1.12.0":
   version: 1.14.1
   resolution: "dashdash@npm:1.14.1"
@@ -13252,6 +13324,13 @@ __metadata:
   dependencies:
     is-obj: ^2.0.0
   checksum: d5775790093c234ef4bfd5fbe40884ff7e6c87573e5339432870616331189f7f5d86575c5b5af2dcf0f61172990f4f734d07844b1f23482fff09e3c4bead05ea
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "dotenv@npm:16.0.0"
+  checksum: 664cebb51f0a9a1d1b930f51f0271e72e26d62feaecc9dc03df39453dd494b4e724809ca480fb3ec3213382b1ed3f791aaeb83569a137f9329ce58efd4853dbf
   languageName: node
   linkType: hard
 
@@ -17015,6 +17094,17 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
+"ipfs-core-types@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "ipfs-core-types@npm:0.10.1"
+  dependencies:
+    interface-datastore: ^6.0.2
+    multiaddr: ^10.0.0
+    multiformats: ^9.5.1
+  checksum: bc8fc18c79cf57da7d5146b94e88296c7b2c11be2efd6985edcf1e3307ca24b26b4b1b77bd4a79c9a798a88f6d113708535bb9df9aa94f1c6316ad61471fed98
+  languageName: node
+  linkType: hard
+
 "ipfs-core-types@npm:^0.7.1":
   version: 0.7.1
   resolution: "ipfs-core-types@npm:0.7.1"
@@ -17097,6 +17187,34 @@ fsevents@~2.1.1:
     timeout-abort-controller: ^1.1.1
     uint8arrays: ^3.0.0
   checksum: 27aca8bd75f2c89580cd458cc791e2fa6d6f6ee51a0a491c24fa9c50b9bbee4f9eb0c080466cdc8683bfb51935661a7858768bbd656618dc51eb22deafa9f270
+  languageName: node
+  linkType: hard
+
+"ipfs-core-utils@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "ipfs-core-utils@npm:0.14.1"
+  dependencies:
+    any-signal: ^3.0.0
+    blob-to-it: ^1.0.1
+    browser-readablestream-to-it: ^1.0.1
+    debug: ^4.1.1
+    err-code: ^3.0.1
+    ipfs-core-types: ^0.10.1
+    ipfs-unixfs: ^6.0.3
+    ipfs-utils: ^9.0.2
+    it-all: ^1.0.4
+    it-map: ^1.0.4
+    it-peekable: ^1.0.2
+    it-to-stream: ^1.0.0
+    merge-options: ^3.0.4
+    multiaddr: ^10.0.0
+    multiaddr-to-uri: ^8.0.0
+    multiformats: ^9.5.1
+    nanoid: ^3.1.23
+    parse-duration: ^1.0.0
+    timeout-abort-controller: ^3.0.0
+    uint8arrays: ^3.0.0
+  checksum: ff2430a341bdd4e4e44e1dccad08bec9ef334ca41fe8888a218c49abe467b7d7c91ad4e9f167b23e0ef000df2e1cc4ffa1952ea84ce1bc1c7c132f3e689ca526
   languageName: node
   linkType: hard
 
@@ -17285,6 +17403,32 @@ fsevents@~2.1.1:
     stream-to-it: ^0.2.2
     uint8arrays: ^3.0.0
   checksum: 4c982cd984dd9e8aa5bb3c193b97cc82a688f9207750cff96e3cfe2deab13d95782d02f05273ddbedc44b4d37abe3242cdeda49461288e45d8aea93c94d270be
+  languageName: node
+  linkType: hard
+
+"ipfs-http-client@npm:^56.0.1":
+  version: 56.0.1
+  resolution: "ipfs-http-client@npm:56.0.1"
+  dependencies:
+    "@ipld/dag-cbor": ^7.0.0
+    "@ipld/dag-json": ^8.0.1
+    "@ipld/dag-pb": ^2.1.3
+    any-signal: ^3.0.0
+    dag-jose: ^1.0.0
+    debug: ^4.1.1
+    err-code: ^3.0.1
+    ipfs-core-types: ^0.10.1
+    ipfs-core-utils: ^0.14.1
+    ipfs-utils: ^9.0.2
+    it-first: ^1.0.6
+    it-last: ^1.0.4
+    merge-options: ^3.0.4
+    multiaddr: ^10.0.0
+    multiformats: ^9.5.1
+    parse-duration: ^1.0.0
+    stream-to-it: ^0.2.2
+    uint8arrays: ^3.0.0
+  checksum: 4c4c6e1674f60ccaa44a90160a60f5f73c0eceef5ac27bad1e862ac2380de385a225e1a64d7582fa46fd77c04850e5001fbf4ffe8dca93487a2f4f3f80c7e0e8
   languageName: node
   linkType: hard
 
@@ -21853,6 +21997,13 @@ fsevents@~2.1.1:
   version: 9.4.14
   resolution: "multiformats@npm:9.4.14"
   checksum: d382733bb6749d727c7858f2f684d6bd7bcb94ec618787287dae162623bfdce6f1db9cada5cc1d4670bdf1746297363f7b2146f1e95022ff6cef21515105c069
+  languageName: node
+  linkType: hard
+
+"multiformats@npm:^9.5.1, multiformats@npm:^9.5.4, multiformats@npm:^9.6.4":
+  version: 9.6.4
+  resolution: "multiformats@npm:9.6.4"
+  checksum: b3b8e481112379d6f3aace199a06e6974dfe3ed4e2100a0effe19fef936ba31704382356df6278a3922b5cb47fcfefe3e5bc54e5bebef35272e3503bad3c62ba
   languageName: node
   linkType: hard
 
@@ -26795,6 +26946,15 @@ resolve@1.17.0:
     abort-controller: ^3.0.0
     retimer: ^2.0.0
   checksum: 070c220be4cac532f8cfbffccba3497baf3abe97d4bfc62344dba832b55a2eef1f0e60f33d862a1662e14852c9ef8ae952d1d93f5626d39b6592f29d7d00bd45
+  languageName: node
+  linkType: hard
+
+"timeout-abort-controller@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "timeout-abort-controller@npm:3.0.0"
+  dependencies:
+    retimer: ^3.0.0
+  checksum: c74387e6472a1e151d89b4af8c2a18ac72d566f3cd6ec9b203e3cda969fb5c54acba0a8d20cda8e9772efda52e27bea59c3423bab785b65f0287c9419184607e
   languageName: node
   linkType: hard
 

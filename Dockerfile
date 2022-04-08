@@ -1,5 +1,5 @@
-# bcrypto requires python >=3.6
-FROM python:buster as builder
+# bcrypto requires python >=3.6 --platform=linux/amd64
+FROM --platform=linux/amd64 python:buster as builder
 ARG location
 ARG package
 
@@ -25,7 +25,7 @@ RUN yarn
 RUN yarn workspace $package build
 RUN yarn bundle $location -o $location/bundle
 
-FROM node:16-alpine
+FROM --platform=linux/amd64 node:16-alpine
 ARG location
 
 EXPOSE 8080

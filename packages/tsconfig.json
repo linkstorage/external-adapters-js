@@ -51,6 +51,9 @@
       "path": "./composites/linear-finance"
     },
     {
+      "path": "./composites/link-storage"
+    },
+    {
       "path": "./composites/market-closure"
     },
     {
