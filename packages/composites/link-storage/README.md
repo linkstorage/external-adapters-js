@@ -1,5 +1,8 @@
 # Chainlink Linkstorage Composite Adapter
 
+**NOTE** We migrated this repo to [omnidata-ea-js](https://github.com/omnidata-network/omnidata-ea-js/tree/develop/packages/composites/omnidata), use this repo at your own risk.
+
+
 This is the linkstorage adapter that provides the ability to save tamper-proof data to IPFS from smart contracts, and interoperate with other blockchains.
 
 ## How to use this in smart contracts
